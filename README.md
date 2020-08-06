@@ -3,20 +3,21 @@ Responsável por cadastrando usuários, patrimônios e marcas.
 Gerador de número máximo familiar.
 
 # Usando a API
-Utiliza padrão REST JSON com Basic Auth, faça download da coleção de todas as requisições no projeto [Postman](https://www.postman.com/downloads/).
+**Utiliza padrão REST JSON, faça [DOWNLOAD](https://raw.githubusercontent.com/vicentemonteiro/navita/master/Navita.postman_collection.json) da coleção de todas as requisições no projeto [Postman](https://www.postman.com/downloads/).**
 
 # Considerações técnicas
+* Qualquer dúvida estou a disposição das equipes avaliadoras.
 * Desenvolvido com o princípio de engenharia de software [KISS](https://pt.wikipedia.org/wiki/Princ%C3%ADpio_KISS), escolhida arquiteura de camadas  de controle (controller), negócio (business) e acesso a dados (dao).
 * Empreguei classes concretas com injeção de dependência.
-* Trata-se de uma aplicação StringBoot, portanto pode executar diretamente com o jar ou diretamente pela IDE.
+* Trata-se de uma aplicação StringBoot, portanto pode executar diretamente com o jar ou pela IDE.
 * Mantive Java na versão 8 pela compatibilidade com um maior número de ambientes de execução.
 * Utilizei todo conjunto de funções do SpringBoot, incluindo segurança da aplicação acesso a dados com abstração por JPA.
-* Abstrai a função incluir(POST) e alterar(PUT) em uma única operação chamada salvar(post), em geral é útil para livrar os clientes do controle de estado, mas poderia facilmente implementar as demais caso necessário/solicitado.  
+* Abstrai a função incluir(POST) e alterar(PUT) em uma única operação chamada salvar(POST), visando facilitar os clientes da necessidade do controle de estado, mas poderia facilmente implementar as demais caso necessário/solicitado.
 * Não incorporei o script de criação do banco pois esta tarefa fica a cargo do Hibernate, cabendo controlar essa criação com o parâmetro abaixo no *application.properties*.
 		`spring.jpa.hibernate.ddl-auto=create-drop`
 * Utilizei o PostgreSQL, porém o Hibernate pode gerar e tratar do acesso ao SQLServer normalmente, bastando alterar o parâmetro abaixo e incluir a dependência do driver ao POM.
         `spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect`
-* Desenvolvi uma funcionalidade adicional de listar todos os objetos cadastrados de cada tipo, patrimonio, usuario e marca.
+* Desenvolvi uma funcionalidade adicional de listar todos os objetos cadastrados de cada tipo, patrimônio, usuario e marca.
 
 # Melhorias Futuras
 Em uma aplicação real consideraria melhorar alguns aspectos.
@@ -25,7 +26,7 @@ Em uma aplicação real consideraria melhorar alguns aspectos.
 * Adicionar maior cobertura de código dos testes automatizados.
 * Ativar a inspeção de código PMD, Checkstyle, FindBugs, CPD.
 * Aprimorar o tratamento de exceções.
-* Adicionar de logs.
+* Adicionar logs.
 * Possivelmente utilizar o [Spring REST Docs](https://spring.io/projects/spring-restdocs) para gerar a documentação dos serviços.
 
 ---

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <sec:http>
+        <sec:csrf disabled="true"/>
+        <sec:intercept-url pattern="/privada/**" access="isAuthenticated()"/>
+        <sec:intercept-url pattern="/publica/**" access="permitAll()"/>
+        <sec:http-basic/>
+    </sec:http>
+    
+    <sec:authentication-manager>
+        <sec:authentication-provider user-service-ref="userService">
+    	</sec:authentication-provider>
+	</sec:authentication-manager>
+	
+ 	<sec:user-service id="userService">
+    	<sec:user name="navita" password="{noop}12345" authorities="ROLE_USER"/>
+	</sec:user-service>
+	
+</beans>

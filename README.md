@@ -27,6 +27,7 @@ Em uma aplicação real consideraria melhorar alguns aspectos.
 * Ativar a inspeção de código PMD, Checkstyle, FindBugs, CPD.
 * Aprimorar o tratamento de exceções.
 * Adicionar logs.
+* Adicionar comentários de código (javadoc).
 * Possivelmente utilizar o [Spring REST Docs](https://spring.io/projects/spring-restdocs) para gerar a documentação dos serviços.
 
 ---

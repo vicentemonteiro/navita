@@ -1,4 +1,4 @@
-# Gestão de Patrimônio e Números Familiares
+# Gestão de Patrimônio da Empresa
 Responsável por cadastrando usuários, patrimônios e marcas.
 Gerador de número máximo familiar.
 

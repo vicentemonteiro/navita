@@ -1,4 +1,4 @@
-# Avaliação NAVITA - Gestão de Patrimônio e Números Familiares
+# Gestão de Patrimônio e Números Familiares
 Responsável por cadastrando usuários, patrimônios e marcas.
 Gerador de número máximo familiar.
 
